@@ -42,11 +42,11 @@ In the **SocialLogin.jsx** we define the layout and functionalities of the Login
 ## 2. InputField.jsx component
 Here we are integrating a reusable React component called **InputField**, which is customizable and can be used for different types of inputs.
 
-Though this component we included icons and a toggle feature to show or hide the password characters.
+Through this component we included icons and a toggle feature to show or hide the password characters.
 
 ***
 
-## Code breakdown
+# Code breakdown
 
 -  **Importing _useState_ from React**
 >
@@ -100,6 +100,7 @@ The component uses the **useState** hook to create  a state variable **isPasswor
 ```
 
 The component returns a **div** element with a class of **input-wrapper**, which is composed of three child elements:
+
 1- **input Field**: Its **type** attribute is determined by the **isPasswordShown** state. If **isPasswordShown** is **true**, the type is set to **text**, otherwise it's set to the value of the **type** prop.
 
 The **placeholder** text for the input field, set to the value of the **placeholder** prop
@@ -111,7 +112,16 @@ The **required** is a boolean attribute indiccating that the input field is requ
 
 -  **Exporting the component**
 
-The **inputField** component is exported as the default export.
+
+
+```js
+ export default InputField;
+```
+-**export**: This keyword is used to export the component built and making it available for import in other files.
+
+-**default**: This keyboard specifies that the component being exported is the default export of the file. This means that when another file imports from this file, it will import this component by default, without needing to specify the name.
+
+-**inputField**: Its the name of the component to be exported allowing other files to import and use this component in their code.
 
 ***
 

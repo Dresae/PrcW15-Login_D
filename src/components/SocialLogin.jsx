@@ -1,4 +1,4 @@
-constSocialLogin = () => {
+const SocialLogin = () => {
     return(
         <div className="social-login">
             <button className="social-button">

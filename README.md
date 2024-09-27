@@ -6,11 +6,12 @@ Responsive Login form with React.js
 >
 
 #  Setting up the project
- 
+
+***
+
 ##  Initialize the project
 Through Vite we will create a React App template on the terminal:
 
-***
 ```console
 npm create vite@latest ./ -- --template react
 ```
@@ -20,12 +21,15 @@ npm install
 npm run dev
 ```
 
+***
+
 ## Prepare your environment
 - For this instance we are not going to use the **assets** folder and the **app.css** file, so they are removed.
 
 - Download the logos in **.svg** format and place them directly on the public folder 
 
-- Add the link of the Google font family later used for the icons and fonts in the **index.html** file
+- Add the link of the Google font family later used for the icons and fonts in the **index.html** file.
+
 ***
 
 # Building up the components
@@ -33,32 +37,83 @@ npm run dev
 ## 1. SocialLogin.jsx component
 In the **SocialLogin.jsx** we define the layout and functionalities of the Login form. This is done by declaring the **SocialLogin** variable and establishing one container under the class **social-login** for both the **Google button** and the **Apple button**
 
+***
+
 ## 2. InputField.jsx component
 Here we are integrating a reusable React component called **InputField**, which is customizable and can be used for different types of inputs.
 
 Though this component we included icons and a toggle feature to show or hide the password characters.
 
+***
+
 ## Code breakdown
 
-***
 -  **Importing _useState_ from React**
 >
 ```js
 import { useState } from "react";
 ```
 
-> 
+This hook is used to add state to functional components.
+
 ***
 
--  **Code section title 2**
+-  **Defining the input field component**
 >
-```css
-Put your code here exactly as it is.
+```js
+ const InputField = ({ type, placeholder, icon }) => {
 ```
 
-> Use this text block to describe **relevant facts**, features or functions of your CSS code section that you consider will be useful in understanding **how the style was applied** and its relationship with the HTML code. You **highlight** some parts of this text to **improve its readability**.
+The **inputField** is a functional component that takes three props: **type**, **placeholder** and **icon**.
+
 ***
 
+-  **State to toggle password visibility**
+>
+```js
+ const [isPasswordShown, setIsPasswordShown] = useState(false);
+```
+
+The component uses the **useState** hook to create  a state variable **isPasswordShown** with an initial value of **false**. This state is used to toggle the visibility of password characters.
+
+***
+
+
+-  **JSX Return statement**
+>
+```js
+  return (
+    <div className="input-wrapper">
+      <input
+        type={isPasswordShown ? 'text' : type}
+        placeholder={placeholder}
+        className="input-field"
+        required
+      />
+      <i className="material-symbols-rounded">{icon}</i>
+      {type === 'password' && (
+        <i onClick={() => setIsPasswordShown(prevState => !prevState)} className="material-symbols-rounded eye-icon">
+          {isPasswordShown ? 'visibility' : 'visibility_off'}
+        </i>
+      )}
+    </div>
+```
+
+The component returns a **div** element with a class of **input-wrapper**, which is composed of three child elements:
+1- **input Field**: Its **type** attribute is determined by the **isPasswordShown** state. If **isPasswordShown** is **true**, the type is set to **text**, otherwise it's set to the value of the **type** prop.
+
+The **placeholder** text for the input field, set to the value of the **placeholder** prop
+
+The **required** is a boolean attribute indiccating that the input field is required.
+
+2- **icon**: An **i** element with a class of **material-symbols-rounded eye-icon**, which is only rendered if the **type** prop is set to **password**. This element toggle the **isPasswordShown** state when clicked and displays either the **visibility** or the **visibility_off** icon depending on the state. 
+***
+
+-  **Exporting the component**
+
+The **inputField** component is exported as the default export.
+
+***
 
 ![reading...](https://media.giphy.com/media/Tf3mp01bfrrUc/giphy.gif?cid=ecf05e47wajghtrc5targr7mju7coe0avdyurnehrr1krgdt&ep=v1_gifs_search&rid=giphy.gif&ct=g "...How could I ever do so unless someone guide me?")
 

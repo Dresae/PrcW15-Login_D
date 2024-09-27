@@ -112,8 +112,6 @@ The **required** is a boolean attribute indiccating that the input field is requ
 
 -  **Exporting the component**
 
-
-
 ```js
  export default InputField;
 ```
@@ -122,6 +120,61 @@ The **required** is a boolean attribute indiccating that the input field is requ
 -**default**: This keyboard specifies that the component being exported is the default export of the file. This means that when another file imports from this file, it will import this component by default, without needing to specify the name.
 
 -**inputField**: Its the name of the component to be exported allowing other files to import and use this component in their code.
+***
+
+# Building the **app.jsx** component
+
+-  **Importing the previously build components**
+>
+```js
+import SocialLogin from "./components/SocialLogin"
+import InputField from "./components/InputField"
+```
+
+These components are imported to allow the developer to reuse them throughout the application.
+***
+
+-  **Defining the App component**
+>
+```js
+const App = () => {
+    return(
+        <div className="login-container">
+            <h2 className="form-title">Login with</h2>
+            <SocialLogin />
+
+            <p className="separator"><span>or</span></p>
+
+            <form action="#" className="login-form">
+                <InputField type="email" placeholder="Email address" icon="mail"/>
+                <InputField type="password" placeholder="Password" icon="lock"/>
+
+                <a href="#" className="forgot-password-link">Forgot passsword?</a>
+
+                <button type="submit" className="login-button">Log in</button>
+            </form>
+
+            <p className="signup-prompt">Don't have an account? <a href="#" className="signup-link">Sign up</a>
+            </p>
+        </div>
+    )
+}
+
+```
+
+The **App** component is a React component that represents a login form. It includes social login options and a traditional login form.
+
+The form is composed of several elements, including input fields, links, and a submit button. the code imports custom component to render the social logins options and input fields.
+
+In general the **app.jsx** component provides a basic structure for a login form with social logins options, and can be customized and extended to fit especific use cases.
+***
+
+-  **Exporting the component**
+
+```js
+ export default App;
+```
+-**export**: This keyword is used to export the component built and making it available for import in other files.
 
 ***
 

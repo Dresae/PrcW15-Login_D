@@ -4,7 +4,7 @@ Responsive Login form with React.js
 
 ![screenshot](pics/screenshot1.png)
 
-#  Code analysis
+#  Setting up the project
  
 ##  Initialize the project
 Through Vite we will create a React App template on the terminal:
@@ -19,8 +19,17 @@ npm install
 npm run dev
 ```
 
-## Remove default folders and css files
-###
+## Prepare your environment
+- For this instance we are not going to use the **assets** folder and the **app.css** file, so they are removed.
+
+- Download the logos in **.svg** format and place them directly on the public folder 
+
+- Add the link of the Google font family later used for the icons and fonts 
+
+
+# Building up the components
+ 
+
 
 
 

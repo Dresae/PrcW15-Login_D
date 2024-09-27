@@ -1,6 +1,6 @@
  
 #  Responsive Login Form
-Responsive Login form with React.js
+## Responsive Login form with React.js
 
 ![screenshot](pics/screenshot1.png)
 >
@@ -124,7 +124,7 @@ The **required** is a boolean attribute indiccating that the input field is requ
 
 # Building the **app.jsx** component
 
--  **Importing the previously build components**
+-  **Importing the previously built components**
 >
 ```js
 import SocialLogin from "./components/SocialLogin"
